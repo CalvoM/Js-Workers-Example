@@ -1,0 +1,50 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    font-family: Manjari;
+}
+
+#NavBar {
+    width: 100%;
+    background: #ff0000;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#siteTitle {
+    color: white;
+}
+
+#NavBar a {
+    float: right;
+    text-decoration: none;
+    color: white;
+    padding-right: 1em;
+}
+
+#searchLabel{
+    margin-left:4em;
+}
+#searchInput{
+    margin-left: 0.5em;
+    padding:0.4em;
+    letter-spacing: 0.8px;
+}
+#searchInput:focus{
+    outline:none;
+}
+#searchInput:focus:invalid{
+    border:1px solid red;
+    outline: none;
+}
+#searchBtn{
+    padding:0.5em;
+    border:none;
+    background: rgb(27, 175, 27);
+    color:white;
+    font-weight: bold;
+}
+#searchBtn:focus{
+    outline:none;
+}

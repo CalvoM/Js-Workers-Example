@@ -1,0 +1,22 @@
+{
+  "name": "workers_examples",
+  "version": "1.0.0",
+  "description": "Simple Js app using web workers and service workers",
+  "main": "./scripts/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Web",
+    "Workers",
+    "Service",
+    "Workers",
+    "PWA"
+  ],
+  "author": "CalvoM",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.1",
+    "cors-anywhere": "^0.4.1"
+  }
+}

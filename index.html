@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Site</title>
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+</head>
+<body>
+    <nav id="NavBar">
+        <span id="siteTitle">My PWA Site</span>
+        <a href="./pages/about.html">About Us</a>
+    </nav>
+    <main id="mainBody">
+        <form >
+            <label for="searchInput" id="searchLabel">
+                Search
+                <input type="url" name="searchInput" id="searchInput" required>
+            </label>
+            <input type="submit" id="searchBtn" value="Search"/>
+        </form>
+        <ul id="headersList">
+        </ul>
+    </main>
+    <script src="./scripts/main.js" type="module"></script>
+    <script>
+        window.addEventListener('load',event =>{
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => {
+                        console.log("SW successful =>", registration)
+                    })
+                    .catch(err => {
+                        console.log("SW Error =>", err)
+                    })
+            }
+        })
+        
+    </script>
+</body>
+</html>
