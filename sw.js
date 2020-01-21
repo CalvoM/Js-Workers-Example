@@ -1,4 +1,4 @@
-
+const cors_url = 'https://corscorrect.herokuapp.com/'
 const CACHE_NAME='cache-version-1'
 let filesToCache=[
     '/',
@@ -22,10 +22,20 @@ self.addEventListener('activate',event=>{
 //@brief When SW gets FETCH event
 self.addEventListener("fetch",event=>{
     console.log(event)
+    let match;
+    let request;
+    if (event.request.method === "POST" && event.request.url === (cors_url + 'https://thibitisha-fake-news-api.herokuapp.com/scrape/')) {
+    console.log("POST")    
+    request = new Request(event.request.url)
+    match = caches.match(request)
+    }
+    else if (event.request.method === "GET") {
+        match = caches.match(event.request)
+    }
     event.respondWith(
-        caches.match(event.request)
-        .then(response=>{
+        match.then(response=>{
             if(response){
+                console.log("Post return, ",response)
                 return response
             }
             return fetch(event.request)
@@ -37,6 +47,9 @@ self.addEventListener("fetch",event=>{
                         caches.open(CACHE_NAME)
                         .then(cache=>{
                             if(event.request.method==="GET")cache.put(event.request,clonedResponse)
+                            else if (event.request.method === "POST" && event.request.url === (cors_url + 'https://thibitisha-fake-news-api.herokuapp.com/scrape/')){
+                                cache.put(request,clonedResponse)
+                            }
                         })
                         .catch(err => {
                             console.log(err)
@@ -46,4 +59,4 @@ self.addEventListener("fetch",event=>{
                     
         })
     )
-});
+})
