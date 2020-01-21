@@ -17,10 +17,11 @@ self.addEventListener('install',event=>{
 });
 //@brief When SW is activated
 self.addEventListener('activate',event=>{
-
+   clients.claim()
 });
 //@brief When SW gets FETCH event
 self.addEventListener("fetch",event=>{
+    console.log(event)
     event.respondWith(
         caches.match(event.request)
         .then(response=>{
@@ -35,7 +36,7 @@ self.addEventListener("fetch",event=>{
                         let clonedResponse = response.clone()
                         caches.open(CACHE_NAME)
                         .then(cache=>{
-                            cache.put(event.request,clonedResponse)
+                            if(event.request.method==="GET")cache.put(event.request,clonedResponse)
                         })
                         .catch(err => {
                             console.log(err)

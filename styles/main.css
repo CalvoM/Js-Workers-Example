@@ -27,6 +27,16 @@ html {
     margin-left: 0.5em;
     padding: 0.4em;
     letter-spacing: 0.8px;
+    width: 70%;
+}
+
+#searchLabel {
+    letter-spacing: 0.3em;
+    width: 85%;
+}
+
+#searchLabel span {
+    width: 30%;
 }
 
 #searchInput:focus {
@@ -39,7 +49,8 @@ html {
 }
 
 #searchBtn {
-    padding: 0.5em;
+    display: inline-block;
+    padding: 0.5em 1em;
     border: none;
     background: rgb(27, 175, 27);
     color: white;
@@ -51,14 +62,52 @@ html {
 }
 
 form {
-    width: 70%;
-    margin: 2rem auto;
+    width: 40%;
+    margin: 5% auto;
+    border: 1px solid #eee;
+    padding: 0.5em;
+}
+
+#postList li {
+    list-style-type: none;
+    border: 1px solid #ddd;
+    padding: 1.5em;
+    background: rgba(35, 161, 56,0.4);
+    color: rgb(168, 6, 168);
+    width: 60%;
+    margin: 1em auto;
+    border-radius:0.3em;
+}
+
+@media screen and (max-width:1490px) {
+    #searchInput {
+        width: 40%;
+    }
+
+    form{
+        width:70%;
+    }
+}
+
+@media screen and (max-width:850px) {
+    #searchInput {
+        width: 50%;
+    }
 }
 
 @media screen and (max-width:450px) {
     form {
-        width: 90%;
-        margin: 2rem auto;
+        width: 95%;
+        margin: 1% auto;
         font-size: 80%;
+        padding: 0.2em;
+    }
+
+    #searchLabel {
+        letter-spacing: 0em;
+    }
+
+    #searchInput {
+        width: 50%;
     }
 }

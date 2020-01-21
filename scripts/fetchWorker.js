@@ -1,5 +1,5 @@
 const cors_url = 'https://corscorrect.herokuapp.com/'
-let messageObj = { 'title': '', 'message': {} }
+let messageObj = { 'title': '', 'message': '' }
 self.onmessage = function(event){
     let {title,message} = event.data;
     if(title==='search'){
