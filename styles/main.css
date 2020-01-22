@@ -8,7 +8,7 @@ html {
 #NavBar {
     width: 100%;
     background: #ff0000;
-    padding: 0.5em;
+    padding: 1em;
     margin-bottom: 0.5em;
 }
 
@@ -66,9 +66,10 @@ form {
     margin: 5% auto;
     border: 1px solid #eee;
     padding: 0.5em;
+    text-align: center;
 }
 
-#postList li {
+.postItem {
     list-style-type: none;
     border: 1px solid #ddd;
     padding: 1.5em;
@@ -78,7 +79,16 @@ form {
     margin: 1em auto;
     border-radius:0.3em;
 }
-
+.statusNote{
+    width:10%;
+    text-align: center;
+    padding:0.9em;
+    border-radius:1.7em;
+    background: rgba(245, 5, 5);
+    opacity: 0.7;
+    margin: 1em auto;
+    color:white;
+}
 @media screen and (max-width:1490px) {
     #searchInput {
         width: 40%;
@@ -109,5 +119,8 @@ form {
 
     #searchInput {
         width: 50%;
+    }
+    .statusNote{
+        width:40%;
     }
 }
